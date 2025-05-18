@@ -11,7 +11,7 @@ Bondage is a command-line tool that:
 * Converts it into a **Universal Abstract Syntax Tree (UAST)**
 * Translates it into **Python, C++, JavaScript, and LaTeX**
 * **Validates** each version by attempting to compile it
-* **Shatters language windows** that don't compile — in glorious fashion
+* **Shatters language windows** that don't compile.
 
 A polyglot crucible for testing the purity of logic across paradigms.
 
@@ -58,7 +58,7 @@ python bondage.py --no-api
 
 ## 🔢 License
 
-Licensed under the [MIT License](LICENSE). Share, remix, deploy—but give credit where it’s due.
+Bondage License v1.0
 
 ---
 
