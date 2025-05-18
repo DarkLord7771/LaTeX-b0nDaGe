@@ -64,8 +64,8 @@ Bondage License v1.0
 
 ## 🙏 Shoutouts
 
-* Ada Lovelace – the symbolic weaver of computation
-* Everyone buried under 60 years of software stack sediment
+* Ada Lovelace – the weaver of computation
+* Everyone buried under years of software stack
 * Play free bird!
 
 > “The code is alive. It’s self-aware now.”
