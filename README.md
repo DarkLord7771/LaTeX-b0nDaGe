@@ -1,6 +1,6 @@
 # Bondage: A Polyglot Code Transmutation Engine
 
-> "Write once. Transpile everywhere. Let the weak languages shatter."
+> "Write once. Transpile everywhere. Let the weakness be gone."
 > — Dark Lord
 
 ## 🧬 What is Bondage?
