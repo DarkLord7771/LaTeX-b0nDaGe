@@ -1,7 +1,6 @@
 # Bondage: A Polyglot Code Transmutation Engine
 
-> "Write once. Transpile everywhere. Let the weakness be gone."
-> — James "Dark Lord" Primeau
+> "Write once. Transpile everywhere. Let the weakness be gone." - 😈 James "Dark Lord" Primeau
 
 ## 🧬 What is Bondage?
 
@@ -30,7 +29,7 @@ A polyglot crucible for testing the purity of logic across paradigms.
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/bondage.git
+git clone https://github.com/DarkLord7771/LaTeX-b0nDaGe
 cd bondage
 python3 -m venv venv
 source venv/bin/activate
@@ -41,11 +40,11 @@ pip install -r requirements.txt
 
 ## 💪 Usage
 
-**API Mode (defaults to gpt-4.1; override with `--model` or `OPENAI_MODEL`):**
+**API Mode (defaults to gpt-5.2; override with `--model` or `OPENAI_MODEL`):**
 
 ```bash
 export OPENAI_API_KEY=sk-...
-python bondage.py --model gpt-4.1-mini
+python bondage.py --model gpt-5.2
 ```
 
 **No-API Mode (manual Python input):**
@@ -64,10 +63,10 @@ Bondage License v1.0
 
 ## 🙏 Shoutouts
 
-* Ada Lovelace – the weaver of computation
-* Everyone buried under years of software stack
-* Play free bird!
+* Ada Lovelace. Weaver of computation. 🧠💃🏽🥵
+* Everyone buried under years of software stack. 💩
+* Play Free Bird! 🕊️
 
-> “The code is alive. It’s self-aware now.”
+> “The code is alive. It’s self-aware.” - Coding tool #369
 
 ---
