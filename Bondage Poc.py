@@ -107,6 +107,19 @@ def emit_js_code(ast: UASTNode) -> str:
     return ""
 
 
+def emit_rust_code(ast: UASTNode) -> str:
+    if ast.node_type == "function":
+        body = "\n".join(emit_rust_code(child) for child in ast.children)
+        return f"fn {ast.name}() {{\n{body}\n}}"
+    elif ast.node_type == "call":
+        args_list = [str(arg) for arg in ast.meta.get("args", [])]
+        if args_list:
+            placeholders = ", ".join(["{:?}"] * len(args_list))
+            args = ", ".join(args_list)
+            return f"    println!(\"{placeholders}\", {args});"
+        return "    println!(\"\");"
+    return ""
+
 # --- Compilation Validators ---
 def validate_code(command: List[str], code: str, filename: str) -> bool:
     try:
@@ -161,7 +174,8 @@ if __name__ == "__main__":
         "Python": emit_python_code(uast),
         "LaTeX": emit_latex_code(uast),
         "C++": emit_cpp_code(uast),
-        "JavaScript": emit_js_code(uast)
+        "JavaScript": emit_js_code(uast),
+        "Rust": emit_rust_code(uast)
     }
 
     save_output_files(languages)
@@ -170,7 +184,8 @@ if __name__ == "__main__":
         "Python": lambda code: validate_code(["python3", "-m", "py_compile"], code, ".py"),
         "LaTeX": lambda code: validate_code(["pdflatex", "-interaction=nonstopmode"], code, ".tex"),
         "C++": lambda code: validate_code(["g++", "-o", "/dev/null"], code, ".cpp"),
-        "JavaScript": lambda code: validate_code(["node", "--check"], code, ".js")
+        "JavaScript": lambda code: validate_code(["node", "--check"], code, ".js"),
+        "Rust": lambda code: validate_code(["rustc", "-o", "/dev/null"], code, ".rs")
     }
 
     print("\n--- Window Validation ---")
