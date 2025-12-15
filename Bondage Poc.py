@@ -356,8 +356,8 @@ if __name__ == "__main__":
     parser.add_argument("--no-api", action="store_true", help="Disable OpenAI generation and enter Python manually")
     parser.add_argument(
         "--model",
-        default=os.getenv("OPENAI_MODEL", "gpt-4.1"),
-        help="OpenAI model to use (defaults to gpt-4.1 or OPENAI_MODEL env)",
+        default=os.getenv("OPENAI_MODEL", "gpt-5.2"),
+        help="OpenAI model to use (defaults to gpt-5.2 or OPENAI_MODEL env)",
     )
     args = parser.parse_args()
     use_api = not args.no_api
