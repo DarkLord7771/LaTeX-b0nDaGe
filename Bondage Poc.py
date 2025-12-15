@@ -5,6 +5,7 @@
 # - Saves output to ./outputs/{language}.txt
 # - Secure API handling via OPENAI_API_KEY only
 
+import argparse
 import os
 import sys
 import requests
@@ -27,13 +28,13 @@ class UASTNode:
 
 
 # --- GPT API Code Generation ---
-def query_openai_for_code(prompt: str, api_key: str) -> str:
+def query_openai_for_code(prompt: str, api_key: str, model: str) -> str:
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
     body = {
-        "model": "gpt-4o",
+        "model": model,
         "messages": [
             {"role": "user", "content": f"Write the following logic in Python only. Be clean and minimal. {prompt}"}
         ]
@@ -351,9 +352,16 @@ def save_output_files(language_map: Dict[str, str], out_dir: str = "outputs"):
 
 # --- Main Execution Loop ---
 if __name__ == "__main__":
-    use_api = True
-    if len(sys.argv) > 1 and sys.argv[1] == "--no-api":
-        use_api = False
+    parser = argparse.ArgumentParser(description="Bondage: Polyglot code transmutation engine")
+    parser.add_argument("--no-api", action="store_true", help="Disable OpenAI generation and enter Python manually")
+    parser.add_argument(
+        "--model",
+        default=os.getenv("OPENAI_MODEL", "gpt-4.1"),
+        help="OpenAI model to use (defaults to gpt-4.1 or OPENAI_MODEL env)",
+    )
+    args = parser.parse_args()
+    use_api = not args.no_api
+    model = args.model
 
     if use_api:
         api_key = os.getenv("OPENAI_API_KEY")
@@ -362,7 +370,8 @@ if __name__ == "__main__":
             exit(1)
         prompt = input("Describe the logic you'd like to write: ")
         print("\n--- Requesting Python Code from OpenAI ---")
-        python_code = query_openai_for_code(prompt, api_key)
+        print(f"Using OpenAI model: {model}")
+        python_code = query_openai_for_code(prompt, api_key, model)
     else:
         print("📝 Enter your Python function below. End with a blank line:")
         lines = []

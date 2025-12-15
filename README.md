@@ -41,11 +41,11 @@ pip install -r requirements.txt
 
 ## 💪 Usage
 
-**API Mode (GPT-4o required):**
+**API Mode (defaults to gpt-4.1; override with `--model` or `OPENAI_MODEL`):**
 
 ```bash
 export OPENAI_API_KEY=sk-...
-python bondage.py
+python bondage.py --model gpt-4.1-mini
 ```
 
 **No-API Mode (manual Python input):**
