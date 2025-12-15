@@ -1,6 +1,6 @@
-# Bondage: A Polyglot Code Transmutation Engine
+# Bondage: A Polyglot Code Transmutation Engine 🜏
 
-> "Write once. Transpile everywhere. Let the weakness be gone." - 😈 James "Dark Lord" Primeau
+> "Write once. Transpile everywhere. Let the weakness be gone." - James "Dark Lord" Primeau 😈
 
 ## 🧬 What is Bondage?
 
